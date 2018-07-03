@@ -6,7 +6,29 @@
         xmlns:local="clr-namespace:FileSorter"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+    <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="530" />
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Column="0" Header="Current Image" Margin="0,0,0,-360" Grid.RowSpan="2">
+                    <Image Name="CurrentImage"/>
+                </GroupBox>
+
+                <GroupBox Grid.Column="2" Header="Folders" Margin="0,0,0,-360" Grid.RowSpan="2">
+                </GroupBox>
+             
+            </Grid>
+        </StackPanel>
+    </Border>
 </Window>

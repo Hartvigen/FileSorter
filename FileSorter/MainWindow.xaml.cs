@@ -20,14 +20,29 @@ namespace FileSorter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly WinForms.FolderBrowserDialog _folderBrowserDialog = new WinForms.FolderBrowserDialog();
+        private string _fromPath;
+        private string _toPath;
+        private string _imagePath;
+        private string _newFolderName;
+
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+       public string FromPath
+        {
+            get{ return _fromPath; }
+
+            set {_fromPath = value;}
+        }
+
+
         private void SelectFromPath(object sender, RoutedEventArgs e)
         {
-
+            var result = _folderBrowserDialog.ShowDialog();
         }
     }
 }
