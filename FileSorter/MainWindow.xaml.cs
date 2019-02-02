@@ -55,7 +55,7 @@ namespace FileSorter
         }
 
 
-        public void OpenToPatOnClick(object sender, RoutedEventArgs e)
+        public void OpenToPathOnClick(object sender, RoutedEventArgs e)
         {
             var result = _folderBrowserDialog.ShowDialog();
 
