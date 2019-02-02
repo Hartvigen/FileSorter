@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,25 +26,49 @@ namespace FileSorter
         private string _fromPath;
         private string _toPath;
         private string _imagePath;
+        private ICollectionView _foldersView;
         private string _newFolderName;
 
 
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
        public string FromPath
         {
-            get{ return _fromPath; }
+            get { return _fromPath; }
+            set
+            {
+                _fromPath = value;
+            }
+        }
 
-            set {_fromPath = value;}
+        public ICollectionView FoldersView
+        {
+            get { return _foldersView; }
+            set
+            {
+                _foldersView = value;
+            }
         }
 
 
-        private void SelectFromPath(object sender, RoutedEventArgs e)
+        public void OpenToPatOnClick(object sender, RoutedEventArgs e)
         {
             var result = _folderBrowserDialog.ShowDialog();
+
+            if (result != WinForms.DialogResult.OK || !Directory.Exists(_folderBrowserDialog.SelectedPath))
+                return;
+
+
+            foreach(var s in Directory.GetDirectories(_toPath))
+            {
+
+            }
         }
+
+     
     }
 }
