@@ -57,17 +57,19 @@ namespace FileSorter
 
         public void OpenToPathOnClick(object sender, RoutedEventArgs e)
         {
-            var result = _folderBrowserDialog.ShowDialog();
+            var dialog = _folderBrowserDialog;
+            var result = dialog.ShowDialog();
 
             if (result != WinForms.DialogResult.OK || !Directory.Exists(_folderBrowserDialog.SelectedPath))
                 return;
-
+            _toPath = dialog.SelectedPath;
 
             foreach(var s in Directory.GetDirectories(_toPath))
             {
 
             }
         }
+
 
      
     }
