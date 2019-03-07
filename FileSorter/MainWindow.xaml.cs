@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindForms = System.Windows.Forms;
 
 namespace FileSorter
 {
@@ -22,7 +23,7 @@ namespace FileSorter
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly WinForms.FolderBrowserDialog _folderBrowserDialog = new WinForms.FolderBrowserDialog();
+        private readonly WindForms.FolderBrowserDialog _folderBrowserDialog = new WindForms.FolderBrowserDialog();
         private readonly string[] _imageExtensions = { ".png", ".jpg", ".gif" };
         private string _fromPath;
         private string _toPathUp;
@@ -96,11 +97,11 @@ namespace FileSorter
 
         public void OpenToPathUpOnClick(object sender, RoutedEventArgs e)
         {
-
+            
             var dialog = _folderBrowserDialog;
             var result = dialog.ShowDialog();
 
-            if (result != WinForms.DialogResult.OK || !Directory.Exists(_folderBrowserDialog.SelectedPath))
+            if (result != WindForms.DialogResult.OK || !Directory.Exists(_folderBrowserDialog.SelectedPath))
                 return;
             _toPathUp = dialog.SelectedPath;
         }
