@@ -8,12 +8,27 @@
         Title="FileSorter" Height="450" Width="800">
 
     <Border Padding="5">
-        <StackPanel Height="350" VerticalAlignment="Top">
-            <ListView Margin="10" Width="200" Height="335" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <ListViewItem>An item</ListViewItem>
-            </ListView>
+        <Grid Visibility="Visible" Focusable="True" KeyDown="TestImage">
+            <StackPanel>
+                <StackPanel Height="300" Margin="5">
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Name="Image1" Stretch="Uniform" Height="296"/>
+                </StackPanel>
+                <StackPanel Height="90" Margin="5">
+                    <Button Height="30" Width="90" Click="OpenToPathUpOnClick" Margin="0,30,0,0"/>
 
-            <StackPanel VerticalAlignment="Bottom" ></StackPanel>
-        </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Border>
+
 </Window>
+
+
+<!-- <ListView Margin="10" Width="200" Height="335" HorizontalAlignment="Right" VerticalAlignment="Top" Name="listView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Folders" DisplayMemberBinding="{Binding Folders}" Width="190"/>
+                    </GridView>
+                </ListView.View>
+            </ListView> -->
