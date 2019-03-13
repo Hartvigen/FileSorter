@@ -8,7 +8,7 @@
         Title="FileSorter" Height="450" Width="800">
 
     <Border Padding="5">
-        <Grid Visibility="Visible" Focusable="True" KeyDown="TestImage">
+        <Grid Visibility="Visible" Focusable="True" KeyDown="SendToPath">
             <StackPanel>
                 <StackPanel Height="300" Margin="5">
                     <Image HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -16,7 +16,7 @@
                 </StackPanel>
                 <StackPanel Height="90" Margin="5">
                     <Button Height="30" Width="90" Click="OpenToPathUpOnClick" Margin="0,30,0,0"/>
-
+                    
                 </StackPanel>
             </StackPanel>
         </Grid>

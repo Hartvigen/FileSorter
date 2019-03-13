@@ -69,10 +69,10 @@ namespace FileSorter
                 Image1.Source = new BitmapImage(new Uri(imagePath));
             }
 
-            else
+            /*else
             {
                 MessageBox.Show("pressed something XD");
-            }
+            }*/
 
         }
 
@@ -83,15 +83,27 @@ namespace FileSorter
         }
 
 
-        public void SendToPath(object sender, RoutedEventArgs e)
+        public void SendToPath(object sender, KeyEventArgs e)
         {
-            try
-            {
-                File.Move(_imagePath, _toPathUp);
+            WindForms.Button clicked = sender as WindForms.Button;
+            if (e.Key == Key.Up){
+                /*try
+                {
+                    File.Move(_imagePath, _toPathUp);
+                }
+                catch (IOException s)
+                {
+                    MessageBox.Show("A problem occured with IO: " + s);
+                }*/
+                Image1.Source = new BitmapImage(new Uri(@"C:\Users\Dick Kickem\Documents\MEGA\Billeder\Random pics\Wat\b87.jpg"));
             }
-            catch (IOException s)
-            {
-                MessageBox.Show("A problem occured with IO: " + s);
+
+            if (e.Key == Key.Down){
+                Image1.Source = new BitmapImage(new Uri(@"C:\Users\Dick Kickem\Documents\MEGA\Billeder\Random pics\Wat\6f1.png"));
+            }
+
+            if (e.Key == Key.Left){
+                Image1.Source = new BitmapImage(new Uri(@"C:\Users\Dick Kickem\Documents\MEGA\Billeder\Random pics\Wat\beterson.png"));
             }
         }
 
